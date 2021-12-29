@@ -1,0 +1,22 @@
+main{
+    width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.products{
+    width: 100%;
+}
+
+@media only screen and (max-width: 1140px){
+    main{
+        width: 100%;
+    }
+    .products{
+        justify-content: center;
+    }
+}
