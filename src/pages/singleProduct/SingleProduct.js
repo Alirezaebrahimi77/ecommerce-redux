@@ -40,7 +40,7 @@ const SingleProduct = () => {
             </div>
 
             <button className="addToCartBtn">Add to Cart</button>
-          </div>{" "}
+          </div>
         </>
       )}
     </div>
