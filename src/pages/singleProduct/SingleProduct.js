@@ -7,14 +7,21 @@ import Loader from "../../components/Loader/Loader";
 import StarRatings from "react-star-ratings";
 
 const SingleProduct = () => {
-  const dispatch = useDispatch();
-  const { loading, error, singleProduct } = useSelector(
+    const dispatch = useDispatch();
+const { loading, singleProduct } = useSelector(
     (state) => state.singleProduct
   );
   const { id } = useParams();
+
+
   useEffect(() => {
+
     dispatch(getSingleProduct(id));
-  }, [dispatch, error]);
+   
+  }, [dispatch, id]);
+
+
+
 
   return (
     <div className="singleProductsWrapper">
@@ -28,13 +35,14 @@ const SingleProduct = () => {
           <div className="singleProductRight">
             <div className="singleProductContent">
               <p className="singleProductTitle">{singleProduct.title}</p>
+
               <StarRatings
-                rating={singleProduct.rating.rate}
+                rating={singleProduct.rating && singleProduct.rating.rate}
                 starDimension="18px"
                 starSpacing="2px"
                 starRatedColor= "gold"
               />
-              <span style={{color: "grey"}}> ({singleProduct.rating.count})</span>
+              <span style={{color: "grey"}}> ({singleProduct.rating && singleProduct.rating.count})</span>
               <p className="singleProductPrice">{`${singleProduct.price}$`}</p>
               <p className="singleProductDesc">{singleProduct.description}</p>
             </div>
