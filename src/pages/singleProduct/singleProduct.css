@@ -8,6 +8,7 @@
 .singleProductLeft{
     width: 50%;
     position: relative;
+    padding: 0 100px 100px 100px;
 }
 .singleProductLeft img{
     width: 100%;
@@ -16,5 +17,57 @@
 }
 .singleProductRight{
     width: 50%;
-    padding: 20px;
+    padding: 20px 50px;
+}
+
+.singleProductTitle{
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: bold;
+
+}
+
+.singleProductPrice{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 15px;
+
+}
+
+.singleProductDesc{
+    font-weight: 14px;
+    color: gray;
+    margin-top: 35px;
+}
+.addToCartBtn{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: blueviolet;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 14px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px){
+    .singleProductsWrapper{
+        flex-direction: column;
+    }
+    .singleProductLeft{
+        width: 100%;
+    }
+    .singleProductRight{
+        width: 100%;
+    }
+    .singleProductTitle{
+        font-size: 18px;
+    }
+    .singleProductPrice{
+        font-size: 22px;
+    }
+    .singleProductDesc{
+        font-size: 16px;
+    }
 }
