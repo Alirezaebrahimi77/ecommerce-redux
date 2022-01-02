@@ -44,3 +44,32 @@ nav a{
     background-color: blueviolet;
     color: #fff;
 }
+.cartIcon a{
+    padding: 0;
+    background-color: transparent;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blueviolet !important;
+}
+
+.cartIcon{
+    position: relative;
+}
+.cartItemCounter{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red;
+    top: -6px;
+    right: -6px;
+    color: #fff;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+

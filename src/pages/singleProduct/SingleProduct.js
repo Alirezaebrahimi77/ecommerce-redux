@@ -5,12 +5,14 @@ import { getSingleProduct } from "../../actions/singleProductActions";
 import { useParams } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import StarRatings from "react-star-ratings";
+import {addToCart} from "../../actions/cartActions"
 
-const SingleProduct = () => {
+const SingleProduct = ({getObject}) => {
     const dispatch = useDispatch();
-const { loading, singleProduct } = useSelector(
+    const { loading, singleProduct } = useSelector(
     (state) => state.singleProduct
   );
+    
   const { id } = useParams();
 
 
@@ -20,7 +22,11 @@ const { loading, singleProduct } = useSelector(
    
   }, [dispatch, id]);
 
+  const addToCartHandler= (id) => {
+      dispatch(addToCart(id))
+        console.log(id);
 
+  }
 
 
   return (
@@ -47,7 +53,7 @@ const { loading, singleProduct } = useSelector(
               <p className="singleProductDesc">{singleProduct.description}</p>
             </div>
 
-            <button className="addToCartBtn">Add to Cart</button>
+            <button className="addToCartBtn" onClick={() => addToCartHandler(singleProduct.id)}>Add to Cart</button>
           </div>
         </>
       )}

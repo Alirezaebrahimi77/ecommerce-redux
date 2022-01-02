@@ -15,6 +15,10 @@ const Home = () => {
     
     }, [dispatch])
 
+    const getObject = () => {
+        return console.log("get o")
+      }
+
     return (
             <section className="products">
                 {loading ? <Loader /> : products.map(product => (
